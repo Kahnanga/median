@@ -37,7 +37,7 @@ export default function Upcoming() {
   return (
     <section className="upcoming-section w-full">
       <div className="max-w-[1400px] mx-auto px-4 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6"><p>Upcoming FIDE-Rated Open Tournaments (Selection)</p></h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6"><div style={{fontWeight: 700, textAlign: 'center'}}>Upcoming FIDE-Rated Open Tournaments (Selection)</div></h2>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {tournaments.map((t) => (
