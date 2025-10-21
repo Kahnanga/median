@@ -20,9 +20,9 @@ export default function Home() {
             </code>
             .
           </li>
-          <li className="tracking-[-.01em]">
+          <div className="tracking-[-.01em] list-item">
             Save and see your changes instantly.
-          </li>
+          </div>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
