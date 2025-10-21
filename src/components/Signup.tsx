@@ -17,7 +17,7 @@ export default function Signup() {
       <div className="signup-container max-w-5xl mx-auto px-4 py-12">
         <div className="signup-card rounded-lg" style={{ display: "flex", flexDirection: "column" }}>
           <div className="signup-content max-w-[1851px] mx-auto flex flex-col gap-6">
-            <h2 className="signup-title text-3xl font-bold" style={{ margin: "0 auto" }}>
+            <h2 className="signup-title text-2xl sm:text-3xl md:text-4xl font-bold text-center" style={{ margin: "0 auto" }}>
               Ready to compete with confidence?
             </h2>
 
