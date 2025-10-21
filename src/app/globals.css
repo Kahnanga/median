@@ -1,10 +1,28 @@
+/* 
+  🧩 Tailwind einbinden
+  Diese Zeile lädt alle Tailwind-Basisklassen, Komponenten und Utilities.
+  Ohne diesen Import funktionieren deine Tailwind-Klassen (z. B. flex, text-lg) nicht.
+*/
 @import "tailwindcss";
 
+
+/* 
+  🎨 Globale CSS-Variablen im :root
+  Hier definierst du die Standardfarben (helles Theme).
+  Diese Variablen können überall im Projekt über `var(--background)` etc. verwendet werden.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Standard-Hintergrund (weiß) */
+  --foreground: #171717; /* Standard-Schriftfarbe (fast schwarz) */
 }
 
+
+/*
+  ⚙️ Tailwind Theme-Integration (Tailwind v4 Feature)
+  Mit @theme inline bindest du deine CSS-Variablen in das Tailwind-Theme ein.
+  So kannst du sie z. B. direkt in Klassen wie `bg-[--color-background]` oder `text-[--color-foreground]` verwenden.
+  Außerdem werden hier benutzerdefinierte Schriftarten referenziert.
+*/
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +30,30 @@
   --font-mono: var(--font-geist-mono);
 }
 
+
+/*
+  🌙 Dark Mode (automatischer Wechsel)
+  Wenn das System des Nutzers auf "Dark Mode" steht, 
+  werden die Variablenwerte hier überschrieben.
+  So wechselt dein gesamtes Farbschema automatisch, 
+  ohne dass du manuell Klassen ändern musst.
+*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0a; /* dunkler Hintergrund */
+    --foreground: #ededed; /* helle Schriftfarbe */
   }
 }
 
+
+/*
+  🧍‍♂️ Basis-Styles für den Body
+  Diese Regeln betreffen die gesamte Seite.
+  Der Body nutzt die oben definierten Variablen und Schriftarten.
+  So stellst du sicher, dass jede Komponente standardmäßig das gleiche Farbschema nutzt.
+*/
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background); /* passt sich automatisch an Light/Dark Mode an */
+  color: var(--foreground);       /* Schriftfarbe basierend auf aktuellem Theme */
+  font-family: Arial, Helvetica, sans-serif; /* Fallback-Schriftarten */
 }
