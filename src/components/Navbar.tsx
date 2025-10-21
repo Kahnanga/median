@@ -6,6 +6,7 @@ export default function Navbar() {
   // feste Navigationslinks (deterministisch)
   const links = [
     { href: '/', label: 'Home' },
+    { href: '/events', label: 'Events' },
     { href: '/host', label: 'Host' },
     { href: '/profile', label: 'Profile' },
     { href: '/login', label: 'Login' },
