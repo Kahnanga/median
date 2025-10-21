@@ -18,22 +18,29 @@ export default function TournamentCard({
   infoHref = "#",
 }: Props) {
   return (
-    <article className="tournament-card bg-white dark:bg-[#0a0a0a] rounded-lg border border-black/[.06] p-6 shadow-sm">
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-sm text-muted-foreground mb-1">Date: {date}</p>
-      <p className="text-sm text-muted-foreground mb-4">Location: {location}</p>
+    <article style={{backgroundColor: "rgb(10, 10, 10)", borderRadius: "8px", padding: "24px", boxShadow: "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px", fontWeight: 400, minHeight: "260px", display: "flex", flexDirection: "column", border: "0.8px solid rgba(255, 255, 255, 1)"}}>
+      <div style={{marginBottom: "8px"}}>
+        <h3 className="text-lg font-semibold">{title}</h3>
+      </div>
 
-      <div className="flex gap-3">
+      <div style={{flex: "0 0 auto"}}>
+        <p className="text-sm text-muted-foreground mb-1">Date: {date}</p>
+        <p className="text-sm text-muted-foreground mb-4">Location: {location}</p>
+      </div>
+
+      <div style={{display: "flex", gap: "12px", marginTop: "auto", flexDirection: "row"}}>
         <Link
           href={registerHref}
-          className="inline-flex items-center justify-center rounded-full px-4 py-2 bg-foreground text-background font-medium shadow-sm hover:opacity-95"
+          className="inline-flex items-center justify-center rounded-full font-medium"
+          style={{padding: "8px 16px", backgroundColor: "rgb(237, 237, 237)", color: "rgb(10,10,10)", borderRadius: "9999px"}}
         >
           Register
         </Link>
 
         <Link
           href={infoHref}
-          className="inline-flex items-center justify-center rounded-full px-4 py-2 border border-black/[.08] dark:border-white/[.12] hover:bg-gray-50 dark:hover:bg-[#111] font-medium"
+          className="inline-flex items-center justify-center rounded-full font-medium"
+          style={{padding: "8px 16px", border: "0.8px solid rgba(255,255,255,0.12)", borderRadius: "9999px"}}
         >
           More Information
         </Link>
