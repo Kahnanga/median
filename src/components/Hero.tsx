@@ -19,7 +19,7 @@ export default function Hero() {
         {/* Right: content */}
         <div className="hero-content flex flex-col gap-6">
           <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-            Join. Compete. Celebrate.
+            Join. Compete. Achieve.
           </h1>
 
           <p className="hero-description text-base text-muted-foreground max-w-prose">
