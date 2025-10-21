@@ -1,44 +1,60 @@
-"use client";
+'use client'
 
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Navbar() {
+  // feste Navigationslinks (deterministisch)
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/host', label: 'Host' },
+    { href: '/profile', label: 'Profile' },
+    { href: '/login', label: 'Login' },
+  ]
+
   return (
-    <header className="site-header w-full border-black/[.06] bg-transparent flex flex-col" style={{ borderBottomWidth: '0.8px' }}>
+    <header
+      className="
+        site-header
+        w-full
+        border-b border-black/[.06]
+        bg-transparent
+      "
+      role="banner"
+    >
       <nav
-        className="nav-container w-full flex items-center justify-between px-4 py-3"
+        className="
+          nav-container
+          flex justify-between items-center
+          max-w-5xl mx-auto
+          px-4 py-3
+        "
         role="navigation"
         aria-label="Main navigation"
       >
+        {/* Markenname / Logo */}
         <div className="brand">
-          <Link href="/" className="brand-link text-lg font-semibold">
+          <Link href="/" className="text-lg font-semibold tracking-tight">
             Challenger
           </Link>
         </div>
 
-        <ul className="nav-list flex gap-4 items-center">
-          <li>
-            <Link href="/" className="nav-link text-sm font-medium hover:underline">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/host" className="nav-link text-sm font-medium hover:underline">
-              Host
-            </Link>
-          </li>
-          <li>
-            <Link href="/profile" className="nav-link text-sm font-medium hover:underline">
-              Profile
-            </Link>
-          </li>
-          <li>
-            <Link href="/login" className="nav-link text-sm font-medium hover:underline">
-              Login
-            </Link>
-          </li>
+        {/* Hauptnavigation */}
+        <ul className="nav-list flex gap-5 items-center">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="
+                  text-sm font-medium hover:underline
+                  transition-colors duration-150
+                "
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
-  );
+  )
 }
