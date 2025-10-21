@@ -13,6 +13,7 @@ export default function Hero() {
             alt="Community competition or tournament"
             className="w-full h-80 md:h-[420px] object-cover block"
             loading="lazy"
+            style={{ marginRight: "17px" }}
           />
         </div>
 
