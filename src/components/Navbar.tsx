@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="site-header w-full border-b border-black/[.06] bg-transparent">
+    <header className="site-header w-full border-black/[.06] bg-transparent flex flex-col" style={{ borderBottomWidth: '0.8px' }}>
       <nav
         className="nav-container w-full flex items-center justify-between px-4 py-3"
         role="navigation"
