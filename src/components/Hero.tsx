@@ -9,7 +9,7 @@ export default function Hero() {
         {/* Left: image */}
         <div className="hero-image w-full rounded-lg overflow-hidden shadow-lg">
           <img
-            src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=1600&q=80&auto=format&fit=crop"
+            src="https://images.pexels.com/photos/28397731/pexels-photo-28397731.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940"
             alt="Community competition or tournament"
             className="w-full h-80 md:h-[420px] object-cover block"
             loading="lazy"
