@@ -12,7 +12,7 @@ export default function Hero() {
             src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=1600&q=80&auto=format&fit=crop"
             alt="Community competition or tournament"
             className="w-full h-80 md:h-[420px] object-cover block"
-            loading="eager"
+            loading="lazy"
           />
         </div>
 
