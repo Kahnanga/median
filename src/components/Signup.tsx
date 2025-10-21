@@ -15,19 +15,20 @@ export default function Signup() {
   return (
     <section className="signup-section w-full">
       <div className="signup-container max-w-5xl mx-auto px-4 py-12">
-        <div className="signup-card bg-transparent rounded-lg">
-          <div className="signup-content grid gap-6 max-w-3xl">
-            <h2 className="signup-title text-2xl sm:text-3xl md:text-4xl font-bold">
+        <div className="signup-card rounded-lg" style={{ display: "flex", flexDirection: "column" }}>
+          <div className="signup-content max-w-[1200px] mx-auto flex flex-col gap-6">
+            <h2 className="signup-title text-3xl font-bold" style={{ margin: "0 auto" }}>
               Ready to compete with confidence?
             </h2>
 
-            <p className="signup-description text-base max-w-prose">
-              Create your Challenger account to discover, track, and register for regional tournaments — all
-              from a single, secure dashboard. Register now — it only takes a minute. Save favorite events,
-              receive timely alerts, and complete fast, protected entries.
-            </p>
+            <div className="signup-description text-base max-w-prose" style={{ margin: "0 auto" }}>
+              <p>
+                Create your Challenger account to discover, track, and join local tournaments — all in one place. Save
+                your favorites, get updates, and register in seconds.
+              </p>
+            </div>
 
-            <form className="signup-form flex flex-col sm:flex-row gap-3 items-start sm:items-center" onSubmit={handleSubmit}>
+            <form className="signup-form flex items-center gap-3" onSubmit={handleSubmit}>
               <label htmlFor="email" className="sr-only">
                 Email address
               </label>
