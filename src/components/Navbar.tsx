@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <header className="site-header w-full border-b border-black/[.06] bg-transparent">
       <nav
-        className="nav-container max-w-5xl mx-auto flex items-center justify-between px-4 py-3"
+        className="nav-container w-full flex items-center justify-between px-4 py-3"
         role="navigation"
         aria-label="Main navigation"
       >
