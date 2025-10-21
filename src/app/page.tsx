@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Signup from "../components/Signup";
+import Upcoming from "../components/Upcoming";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main>
         <Hero />
         <Signup />
+        <Upcoming />
       </main>
     </>
   );
