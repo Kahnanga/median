@@ -12,24 +12,11 @@ export default function Navbar() {
   ]
 
   return (
-    <header
-      className="
-        site-header
-        w-full
-        border-b border-black/[.06]
-        bg-transparent
-      "
-      role="banner"
-    >
+    <header style={{display: "flex", borderBottomWidth: "0.8px", borderBottomColor: "oklab(0 0 0 / 0.06)", flexDirection: "column", fontWeight: 400, width: "100%"}} className="site-header w-full" role="banner">
       <nav
-        className="
-          nav-container
-          flex justify-between items-center
-          max-w-5xl mx-auto
-          px-4 py-3
-        "
         role="navigation"
         aria-label="Main navigation"
+        style={{display: "flex", alignItems: "center", fontWeight: 400, justifyContent: "space-between", width: "100%", padding: "12px 16px"}}
       >
         {/* Markenname / Logo */}
         <div className="brand">
