@@ -43,7 +43,7 @@ export default function Stats() {
 
   return (
     <section className="stats-section w-full">
-      <div className="max-w-5xl mx-auto px-4 py-12">
+      <div className="max-w-[1400px] mx-auto px-4 py-12">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Challenger in numbers.</h2>
         <p className="text-center text-base text-muted-foreground max-w-prose mx-auto mb-6">Our growing chess community across Germany — where players connect, compete, and organize together.</p>
 
