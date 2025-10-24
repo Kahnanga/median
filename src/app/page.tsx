@@ -14,6 +14,7 @@ export default function Home() {
         <Signup />
         <Upcoming />
         <HostSection />
+        <Stats />
       </main>
     </>
   );
