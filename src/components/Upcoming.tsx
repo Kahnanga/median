@@ -1,55 +1,60 @@
-import TournamentCard from "./TournamentCard";
+import TournamentCard from "./TournamentCard"
+import { supabase } from "@/lib/supabaseclient"
 
-export default function Upcoming() {
-  const tournaments = [
-    {
-      title: "Spring Open - City Invitational",
-      date: "May 12-14, 2025",
-      location: "Stockholm, Sweden",
-      registerHref: "/register/spring-open",
-      infoHref: "/events/spring-open",
-    },
-    {
-      title: "Nordic Rapid Championship",
-      date: "June 2-4, 2025",
-      location: "Oslo, Norway",
-      registerHref: "/register/nordic-rapid",
-      infoHref: "/events/nordic-rapid",
-    },
-    {
-      title: "City Weekend Open",
-      date: "July 18-20, 2025",
-      location: "Helsinki, Finland",
-      registerHref: "/register/city-weekend",
-      infoHref: "/events/city-weekend",
-    },
-    {
-      title: "Autumn FIDE Open",
-      date: "September 6-8, 2025",
-      location: "Copenhagen, Denmark",
-      registerHref: "/register/autumn-open",
-      infoHref: "/events/autumn-open",
-    },
-  ];
+type Tournament = {
+  title: string
+  location: string
+  start_date: string
+  slug?: string
+}
+
+export default async function Upcoming() {
+  const { data: tournaments, error } = await supabase
+    .from("chess_events_deduped")
+    .select("title, location, start_date, slug")
+    .ilike("title", "%open%")
+    .order("start_date", { ascending: true })
+    .limit(4)
+
+  if (error) {
+    console.error("Supabase error:", error.message)
+    return (
+      <div className="text-red-500 text-center py-10">
+        Fehler beim Laden der Turniere.
+      </div>
+    )
+  }
 
   return (
     <section className="upcoming-section w-full">
       <div className="max-w-[1400px] mx-auto px-4 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6"><div style={{fontWeight: 700, textAlign: 'center'}}>Upcoming FIDE-Rated Open Tournaments (Selection)</div></h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+          Upcoming FIDE-Rated Open Tournaments (Selection)
+        </h2>
 
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {tournaments.map((t) => (
-            <TournamentCard
-              key={t.title}
-              title={t.title}
-              date={t.date}
-              location={t.location}
-              registerHref={t.registerHref}
-              infoHref={t.infoHref}
-            />
-          ))}
-        </div>
+        {(!tournaments || tournaments.length === 0) ? (
+          <p className="text-center text-muted-foreground">
+            Keine passenden Turniere gefunden.
+          </p>
+        ) : (
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {tournaments.map((t: Tournament) => (
+              <TournamentCard
+                key={t.slug || t.title}
+                title={t.title}
+                date={new Date(t.start_date).toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                })}
+                location={t.location}
+                infoHref={`/events/${t.slug || ""}`}
+                registerHref="#"
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
-  );
+  )
 }
