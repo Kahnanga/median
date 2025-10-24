@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className="site-footer w-full border-t border-black/[.06] bg-transparent">
