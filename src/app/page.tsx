@@ -16,6 +16,7 @@ export default function Home() {
         <Upcoming />
         <HostSection />
         <Stats />
+        <TrustSection />
       </main>
     </>
   );
