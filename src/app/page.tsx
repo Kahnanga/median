@@ -5,6 +5,7 @@ import Upcoming from "../components/Upcoming";
 import HostSection from "../components/Host";
 import Stats from "../components/Stats";
 import TrustSection from "../components/Trust";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
