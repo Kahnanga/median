@@ -16,7 +16,7 @@ function ValueButton({ icon, title, description }: { icon: React.ReactNode; titl
 
 export default function TrustSection() {
   return (
-    <section className="trust-section w-full bg-gray-50 dark:bg-[#071018]">
+    <section className="trust-section w-full">
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="trust-text">
