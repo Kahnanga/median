@@ -47,7 +47,7 @@ export default function Stats() {
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Challenger in numbers.</h2>
         <p className="text-center text-base text-muted-foreground max-w-prose mx-auto mb-6">Our growing chess community across Germany — where players connect, compete, and organize together.</p>
 
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
             <StatCard key={s.label} icon={s.icon} value={s.value} label={s.label} />
           ))}
