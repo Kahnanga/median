@@ -1,22 +1,26 @@
-"use client";
+'use client'
 
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Footer() {
   return (
     <footer className="site-footer w-full border-t border-black/[.06] bg-transparent">
-      <div className="footer-inner mx-auto px-4 py-8 flex flex-row items-center gap-4" style={{margin: '0 auto', padding: '0 16px'}}>
-        <div className="footer-left flex items-center gap-4 text-sm" style={{marginRight: 'auto'}}>
-          <div className="brand font-normal">Challenger:</div>
-          <div className="claim text-sm text-muted-foreground">Built for players. Powered by community.</div>
+      <div className="footer-inner max-w-6xl mx-auto flex flex-row justify-between items-center px-4 py-6">
+        {/* Left side */}
+        <div className="footer-left flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm">
+          <span className="brand font-normal">Challenger:</span>
+          <span className="claim text-sm text-gray-500">
+            Built for players. Powered by community.
+          </span>
         </div>
 
-        <div className="footer-right flex items-center gap-4 text-sm" style={{marginLeft: 'auto'}}>
-          <div className="copyright text-sm text-muted-foreground">© 2025 Challenger. All rights reserved.</div>
+        {/* Right side */}
+        <div className="footer-right flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-sm text-gray-500">
+          <span>© 2025 Challenger. All rights reserved.</span>
           <nav aria-label="Footer navigation">
             <ul className="flex items-center gap-4">
               <li>
-                <Link href="/impressum" className="text-sm hover:underline">
+                <Link href="/impressum" className="hover:underline">
                   Impressum
                 </Link>
               </li>
@@ -25,5 +29,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
