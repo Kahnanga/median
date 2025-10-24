@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="site-footer w-full border-t border-black/[.06] bg-transparent">
-      <div className="footer-inner max-w-5xl mx-auto px-4 py-8 flex flex-row items-center justify-between gap-4">
+      <div className="footer-inner mx-auto px-4 py-8 flex flex-row items-center gap-4" style={{margin: '0 auto', padding: '0 16px'}}>
         <div className="footer-left flex items-center gap-4 text-sm">
           <div className="brand font-semibold">Challenger:</div>
           <div className="claim text-sm text-muted-foreground">Built for players. Powered by community.</div>
