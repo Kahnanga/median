@@ -1,5 +1,3 @@
-"use client";
-
 import TournamentCard from "./TournamentCard";
 
 export default function Upcoming() {

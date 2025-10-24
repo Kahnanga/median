@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 function StatCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 function ValueButton({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
