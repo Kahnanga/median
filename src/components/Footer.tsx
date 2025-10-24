@@ -6,13 +6,13 @@ export default function Footer() {
   return (
     <footer className="site-footer w-full border-t border-black/[.06] bg-transparent">
       <div className="footer-inner max-w-5xl mx-auto px-4 py-8 flex flex-row items-center justify-between gap-4">
-        <div className="footer-left text-sm flex items-center gap-4">
-          <div className="brand text-lg font-semibold">Challenger</div>
-          <div className="claim text-xs text-muted-foreground">Built for players. Powered by community.</div>
-          <div className="copyright text-xs text-muted-foreground">© 2025 Challenger. All rights reserved.</div>
+        <div className="footer-left flex items-center gap-4 text-sm">
+          <div className="brand font-semibold">Challenger:</div>
+          <div className="claim text-sm text-muted-foreground">Built for players. Powered by community.</div>
         </div>
 
-        <div className="footer-right">
+        <div className="footer-right flex items-center gap-4 text-sm">
+          <div className="copyright text-sm text-muted-foreground">© 2025 Challenger. All rights reserved.</div>
           <nav aria-label="Footer navigation">
             <ul className="flex items-center gap-4">
               <li>
